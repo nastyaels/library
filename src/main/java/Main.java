@@ -2,18 +2,20 @@ import java.util.List;
 
 public class Main {
     public static void main(String [] args) {
-        Library myLibrary = new Library();
-        Medium m1 = new Newspaper();
+//        Library myLibrary = new Library();
+        LibraryG<Medium> myLibrary= new LibraryG<Medium>();
+        Medium m1 = new Newspaper("gospodi");
+        Medium m2 = new Book("bozhe");
         try {
-            m1.setName("gazeta");
             myLibrary.add(m1);
+            myLibrary.add(m2);
             System.out.println(myLibrary.get(0).getName());
+            System.out.println(myLibrary.get(1).getName());
             myLibrary.remove(m1);
-            System.out.println(myLibrary.get(0).getName());
             myLibrary.remove(m1);
+//            System.out.println(myLibrary.get(0).getName());
         }
-        catch (Exception ex)
-        {
+        catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }

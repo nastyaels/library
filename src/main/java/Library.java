@@ -7,21 +7,15 @@ public class Library {
     Library(){}
     private List<Medium> listOfMedium = new ArrayList<>();
 
-    public void add (Medium m)
-    {
+    public void add (Medium m) {
         listOfMedium.add(m);
     }
     public void remove(Medium m) throws Exception{
-        try{
-            listOfMedium.remove(m);
-        }
-        catch(Exception ex)
-        {
-            throw new Exception("Can't remove");
-        }
+       if(listOfMedium.contains(m))
+           listOfMedium.remove(m);
+       else throw new Exception("Can't remove");
     }
-    public Medium get(int i) throws Exception
-    {
+    public Medium get(int i) throws Exception {
         try{
             return listOfMedium.get(i);
         }

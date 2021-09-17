@@ -1,10 +1,9 @@
 public class Medium {
     private String name;
-    void setName(String s)
-    {
+    Medium(String s){
         name=s;
     }
-    String getName()
+    public String getName()
     {
         return name;
     }
