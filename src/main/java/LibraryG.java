@@ -3,21 +3,18 @@ import java.util.List;
 
 public class LibraryG<T> {
     LibraryG(){}
-    private List<T> listOfLibraryG = new ArrayList<>();
+    private List<T> listOfT = new ArrayList<>();
     public void add(T t){
-        listOfLibraryG.add(t);
+        listOfT.add(t);
     }
     public void remove(T t) throws Exception{
-        if(listOfLibraryG.contains(t))
-            listOfLibraryG.remove(t);
+        if(listOfT.contains(t))
+            listOfT.remove(t);
         else throw new Exception("Can't remove");
     }
     public T get(int i) throws Exception{
-        try{
-            return listOfLibraryG.get(i);
-        }
-        catch(Exception ex){
-            throw new Exception("Can't get");
-        }
+        if(i< listOfT.size())
+            return listOfT.get(i);
+        else throw new Exception("Can't get");
     }
 }

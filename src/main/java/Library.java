@@ -16,12 +16,9 @@ public class Library {
        else throw new Exception("Can't remove");
     }
     public Medium get(int i) throws Exception {
-        try{
+        if(i<listOfMedium.size())
             return listOfMedium.get(i);
-        }
-        catch(Exception ex) {
-            throw new Exception("Can't get");
-        }
+        else throw new Exception("Can't get");
     }
 
 }
